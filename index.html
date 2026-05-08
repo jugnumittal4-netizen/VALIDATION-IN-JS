@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
 
-    </head>
-    <body>
-        <p> Please Enter A Number And Click OK</p>
-        <input type="number" id="num" min = "100" max = "300" required>
-        <button onclick="myFunction()">OK</button>
-        
-        <p> If the number is less than 100 or higher than 300, an error message will be displayed.</p>
-        <p id="demo"></p>
-        <script>
-            function myFunction() {
-                var v = document.getElementById("num");
-                if (!v.checkValidity()) {
-                    document.getElementById("demo").innerHTML = v.validationMessage;
-                } else {
-                    document.getElementById("demo").innerHTML = "input ok";
-                }}
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="calc">
+        <div class="title">Calculator</div>
+
+        <div class="grid">
+            <input id="result" type="text" placeholder="Result" readonly>
+            <button class="btn op" onclick="setScreenValue('+')">+</button>
+            <button class="btn" onclick="setScreenValue('1')">1</button>
+            <button class="btn" onclick="setScreenValue('2')">2</button>
+            <button class="btn" onclick="setScreenValue('3')">3</button>
+            <button class="btn op" onclick="setScreenValue('-')">-</button>
+            <button class="btn" onclick="setScreenValue('4')">4</button>
+            <button class="btn" onclick="setScreenValue('5')">5</button>
+            <button class="btn" onclick="setScreenValue('6')">6</button>
+            <button class="btn op" onclick="setScreenValue('*')">x</button>
+
+            <button class="btn" onclick="setScreenValue('7')">7</button>
+            <button class="btn" onclick="setScreenValue('8')">8</button>
+            <button class="btn" onclick="setScreenValue('9')">9</button>
+            <button class="btn op" onclick="setScreenValue('/')">/</button>
+            <button class="btn" onclick="setScreenValue('%')">%</button>
+            <button class="btn" onclick="setScreenValue('0')">0</button>
+            <button class="btn" onclick="setScreenValue('.')">.</button>
+            <button class="btn op" onclick="calculateResult()">=</button>
+        </div>
+
+        <button class="clear" onclick="clearScreen()">CLEAR</button>
+    </div>
+
+    <script src="style.js"></script>
+
+</body>
+
 </html>
